@@ -1,0 +1,4 @@
+﻿bazel-bin/tensorflow/tools/graph_transforms/transform_graph --in_graph=/Users/kirillovchinnikov/Downloads/new_model/output_graph.pb --out_graph=/Users/kirillovchinnikov/Downloads/new_model/frozen_model_tr.pb --inputs=input --outputs=final_result --transforms="fold_constants sort_by_execution_order remove_nodes(op=Squeeze)"
+
+bazel-bin/tensorflow/tools/graph_transforms/transform_graph --in_graph=/Users/kirillovchinnikov/Downloads/new_model/frozen_model_tr.pb --out_graph=/Users/kirillovchinnikov/Downloads/new_model/frozen_model_for_dnn.pb --inputs=input --outputs=final_result --transforms="remove_nodes(op=PlaceholderWithDefault)"
+
